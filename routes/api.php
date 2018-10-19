@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::any('/mini/compare', 'MiniApi\FaceCompareController@compareFace');
+Route::any('/mini/uploadToken', 'MiniApi\FaceCompareController@getQUploadToken');
