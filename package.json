@@ -17,5 +17,10 @@
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "iview": "^2.14.0",
+        "prettier": "^1.12.1",
+        "xml2js": "^0.4.19"
     }
 }

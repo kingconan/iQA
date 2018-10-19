@@ -7,6 +7,9 @@
 
 require('./bootstrap');
 
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+
 window.Vue = require('vue');
 
 /**
@@ -15,8 +18,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('eg', require('./components/eg1.vue'));
+Vue.use(iView);
 
-const app = new Vue({
-    el: '#app'
-});
+
