@@ -17,10 +17,14 @@ class FaceCompareController extends Controller
     public function getQUploadToken(Request $request){
         $ak = env('QI_AK');
         $sk = env('QI_CK');
-        $upManager = new UploadManager();
         $auth = new Auth($ak, $sk);
+        $policy =
+        array(
+            'scope' => 'info',
+            'deadline' => 3600,
+            'returnBody' => '{"w": $(imageInfo.width),"h": $(imageInfo.height),"key": $(etag)}');
 
-        $token = $auth->uploadToken('info');
+        $token = $auth->uploadToken('info', null, 3600, $policy);
 
         return response()->json([
             'ok' => 0,
